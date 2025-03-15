@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="appetite.java.client.controllers.IngredientViewController"
+            style="-fx-background-color: linear-gradient(to bottom right, #1e3c72, #2a5298);">
+    
+    <center>
+        <!-- Centered "card" container -->
+        <VBox spacing="20" alignment="CENTER"
+              style="-fx-background-color: rgba(255,255,255,0.9);
+                     -fx-background-radius: 15;
+                     -fx-padding: 30;
+                     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 15, 0.5, 0, 4);">
+            
+            <!-- Heading label -->
+            <Label text="Manage Ingredients"
+                   style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #333;" />
+            
+            <!-- Button bar -->
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Add Ingredient" onAction="#handleAdd"
+                        style="-fx-font-size: 14px; -fx-padding: 6 16; -fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 8;" />
+                <Button text="Edit Ingredient" onAction="#handleEdit"
+                        style="-fx-font-size: 14px; -fx-padding: 6 16; -fx-background-color: #2196F3; -fx-text-fill: white; -fx-background-radius: 8;" />
+                <Button text="Delete Ingredient" onAction="#handleDelete"
+                        style="-fx-font-size: 14px; -fx-padding: 6 16; -fx-background-color: #F44336; -fx-text-fill: white; -fx-background-radius: 8;" />
+                <Button text="Refresh" onAction="#handleRefresh"
+                        style="-fx-font-size: 14px; -fx-padding: 6 16; -fx-background-color: #9C27B0; -fx-text-fill: white; -fx-background-radius: 8;" />
+            </HBox>
+            
+            <!-- TableView -->
+            <TableView fx:id="tableViewIngredients"
+                       style="-fx-min-width: 600; -fx-max-width: 800; -fx-background-radius: 8;">
+                <columns>
+                    <TableColumn fx:id="columnId" text="ID" />
+                    <TableColumn fx:id="columnName" text="Name" />
+                    <TableColumn fx:id="columnCategory" text="Category" />
+                    <TableColumn fx:id="columnUnit" text="Unit" />
+                    <TableColumn fx:id="columnDietTag" text="Diet Tag" />
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>

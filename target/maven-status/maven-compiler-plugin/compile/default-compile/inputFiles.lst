@@ -1,0 +1,16 @@
+/Users/markussehlberg/java-client-web-service/java-rest-client/src/main/java/appetite/java/client/controllers/IngredientViewController.java
+/Users/markussehlberg/java-client-web-service/java-rest-client/src/main/java/appetite/java/client/services/ApiService.java
+/Users/markussehlberg/java-client-web-service/java-rest-client/src/main/java/appetite/java/client/controllers/LandingPageViewController.java
+/Users/markussehlberg/java-client-web-service/java-rest-client/src/main/java/appetite/java/client/controllers/EditRecipeViewController.java
+/Users/markussehlberg/java-client-web-service/java-rest-client/src/main/java/appetite/java/client/controllers/EditIngredientViewController.java
+/Users/markussehlberg/java-client-web-service/java-rest-client/src/main/java/appetite/java/client/controllers/AddRecipeViewController.java
+/Users/markussehlberg/java-client-web-service/java-rest-client/src/main/java/appetite/java/client/controllers/AddIngredientViewController.java
+/Users/markussehlberg/java-client-web-service/java-rest-client/src/main/java/appetite/java/client/services/ApiClient.java
+/Users/markussehlberg/java-client-web-service/java-rest-client/src/main/java/appetite/java/client/models/Ingredient.java
+/Users/markussehlberg/java-client-web-service/java-rest-client/src/main/java/appetite/java/client/controllers/RecipeViewController.java
+/Users/markussehlberg/java-client-web-service/java-rest-client/src/main/java/appetite/java/client/models/RecipeIngredient.java
+/Users/markussehlberg/java-client-web-service/java-rest-client/src/main/java/appetite/java/client/Main.java
+/Users/markussehlberg/java-client-web-service/java-rest-client/src/main/java/module-info.java
+/Users/markussehlberg/java-client-web-service/java-rest-client/src/main/java/appetite/java/client/models/Recipe.java
+/Users/markussehlberg/java-client-web-service/java-rest-client/src/main/java/appetite/java/client/services/RecipeService.java
+/Users/markussehlberg/java-client-web-service/java-rest-client/src/main/java/appetite/java/client/services/IngredientService.java

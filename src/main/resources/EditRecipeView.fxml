@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+
+<GridPane xmlns="http://javafx.com/javafx/17"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="appetite.java.client.controllers.EditRecipeViewController"
+          hgap="10" vgap="10"
+          style="-fx-padding: 20;">
+    
+    <!-- Column constraints: left column for labels (right-aligned) and right column for text fields -->
+    <columnConstraints>
+        <ColumnConstraints minWidth="120" halignment="RIGHT"/>
+        <ColumnConstraints minWidth="200" hgrow="ALWAYS"/>
+    </columnConstraints>
+    
+    <!-- Name -->
+    <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <TextField fx:id="txtName" promptText="Name"
+               GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+    
+    <!-- Data -->
+    <Label text="Data:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <TextField fx:id="txtData" promptText="Data"
+               GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    
+    <!-- Cooking Time -->
+    <Label text="Cooking Time:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <TextField fx:id="txtCookingTime" promptText="Cooking Time"
+               GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    
+    <!-- Servings -->
+    <Label text="Servings:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <TextField fx:id="txtServings" promptText="Servings"
+               GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    
+    <!-- Difficulty Level -->
+    <Label text="Difficulty Level:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    <TextField fx:id="txtDifficulty" promptText="Difficulty Level"
+               GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+    
+    <!-- Ingredient Names -->
+    <Label text="Ingredient Names:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+    <TextField fx:id="txtIngredientNames" promptText="Ingredient Names (comma separated)"
+               GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+    
+    <!-- Button row -->
+    <HBox spacing="10" alignment="CENTER_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="6">
+        <Button text="Save" onAction="#handleSave"/>
+        <Button text="Cancel" onAction="#handleCancel"/>
+    </HBox>
+</GridPane>

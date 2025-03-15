@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="appetite.java.client.controllers.LandingPageViewController"
+            style="-fx-background-color: linear-gradient(to bottom right, #1e3c72, #2a5298);">
+    <center>
+        <VBox spacing="20" alignment="CENTER"
+              style="-fx-background-color: rgba(255,255,255,0.8); -fx-background-radius: 10; -fx-padding: 30;">
+            <!-- ImageView to display the bon-appetite.png image -->
+            <ImageView fitWidth="300" preserveRatio="true">
+                <image>
+                    <Image url="@/bon-appetite.png" />
+                </image>
+            </ImageView>
+            
+            <Label text="Welcome to the Java Client"
+                   style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #333;" />
+            <Label text="Experience seamless connectivity with our REST API"
+                   style="-fx-font-size: 16px; -fx-text-fill: #555;" />
+            <Button fx:id="btnIngredients" text="View Ingredients" onAction="#handleIngredients"
+                    style="-fx-font-size: 16px; -fx-padding: 10 20; -fx-background-color: #4CAF50; -fx-text-fill: white;" />
+            <Button fx:id="btnRecipes" text="View Recipes" onAction="#handleRecipes"
+                    style="-fx-font-size: 16px; -fx-padding: 10 20; -fx-background-color: #FF5722; -fx-text-fill: white;" />
+        </VBox>
+    </center>
+</BorderPane>
