@@ -4,6 +4,7 @@ package appetite.java.client.controllers;
 import appetite.java.client.models.Ingredient;
 import appetite.java.client.services.IngredientService;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -21,11 +22,44 @@ public class AddIngredientViewController {
     
     @FXML
     private void handleSave() {
+        // Validate ingredient name: allow only letters and spaces.
+        String ingredientName = txtName.getText().trim();
+        if (!ingredientName.matches("[a-zA-Z\\s]+")) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Please enter a valid ingredient name (letters and spaces only).");
+            alert.showAndWait();
+            return;
+        }
+        
+        // Validate category: allow only letters and spaces.
+        String category = txtCategory.getText().trim();
+        if (!category.matches("[a-zA-Z\\s]+")) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Please enter a valid category (letters and spaces only).");
+            alert.showAndWait();
+            return;
+        }
+        
+        // Validate unit: allow only letters and spaces.
+        String unit = txtUnit.getText().trim();
+        if (!unit.matches("[a-zA-Z\\s]+")) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Please enter a valid unit (letters and spaces only).");
+            alert.showAndWait();
+            return;
+        }
+        
+        // Validate diet tag: allow only letters and spaces.
+        String dietTag = txtDietTag.getText().trim();
+        if (!dietTag.matches("[a-zA-Z\\s]+")) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Please enter a valid diet tag (letters and spaces only).");
+            alert.showAndWait();
+            return;
+        }
+        
         Ingredient ingredient = new Ingredient();
-        ingredient.setName(txtName.getText());
-        ingredient.setCategory(txtCategory.getText());
-        ingredient.setUnit(txtUnit.getText());
-        ingredient.setDietTag(txtDietTag.getText());
+        ingredient.setName(ingredientName);
+        ingredient.setCategory(category);
+        ingredient.setUnit(unit);
+        ingredient.setDietTag(dietTag);
+        
         try {
             ingredientService.createIngredient(ingredient);
         } catch (Exception e) {
