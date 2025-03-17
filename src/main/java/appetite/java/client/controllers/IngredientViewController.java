@@ -53,16 +53,21 @@ public class IngredientViewController {
     
     @FXML
     private void handleAdd(ActionEvent event) throws Exception {
-        // Updated FXML file name to match the file (AddIngredientView.fxml)
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/AddIngredientView.fxml"));
         Parent root = loader.load();
+
+        // Retrieve the controller instance and set the IngredientService
+        AddIngredientViewController controller = loader.getController();
+        controller.setIngredientService(ingredientService);
+
         Stage stage = new Stage();
         stage.setTitle("Add Ingredient");
         stage.setScene(new Scene(root));
         stage.showAndWait();
+        
         loadIngredients();
     }
-    
+
     @FXML
     private void handleEdit(ActionEvent event) throws Exception {
         Ingredient selected = tableViewIngredients.getSelectionModel().getSelectedItem();
