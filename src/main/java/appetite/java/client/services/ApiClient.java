@@ -29,13 +29,26 @@ public class ApiClient {
     
     public String post(String endpoint, String json) throws IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder()
-            .POST(HttpRequest.BodyPublishers.ofString(json))
-            .uri(URI.create(baseUrl + endpoint))
-            .header("Content-Type", "application/json")
-            .build();
+                .POST(HttpRequest.BodyPublishers.ofString(json))
+                .uri(URI.create(baseUrl + endpoint))
+                .header("Content-Type", "application/json")
+                .header("Accept", "application/json")
+                .build();
         HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
-        return response.body();
+        String body = response.body();
+        
+        // Log the raw response for debugging
+        System.out.println("Raw response: " + body);
+        
+        // If the response appears to be a JSON string wrapped in quotes,
+        // remove the wrapping quotes and unescape any internal quotes.
+        if (body != null && body.startsWith("\"") && body.endsWith("\"")) {
+            body = body.substring(1, body.length() - 1);
+            body = body.replace("\\\"", "\"");
+        }
+        return body;
     }
+    
     
     public String put(String endpoint, String json) throws IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder()

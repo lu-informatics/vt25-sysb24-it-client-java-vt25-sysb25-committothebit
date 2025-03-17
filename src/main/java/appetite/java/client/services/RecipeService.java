@@ -25,6 +25,7 @@ public class RecipeService {
     public Recipe createRecipe(Recipe recipe) throws IOException, InterruptedException {
         return apiService.post("/api/recipe", recipe, Recipe.class);
     }
+    
 
     public boolean updateRecipe(Recipe recipe) throws IOException, InterruptedException {
         return apiService.put("/api/recipe/" + recipe.getId(), recipe);
