@@ -1,6 +1,9 @@
 // controllers/EditIngredientController.java
 package appetite.java.client.controllers;
 
+import java.util.Arrays;
+import java.util.List;
+
 import appetite.java.client.models.Ingredient;
 import appetite.java.client.services.IngredientService;
 import javafx.fxml.FXML;
@@ -56,13 +59,13 @@ private void handleSave() {
     }
     
     // Validate diet tag: allow only letters and spaces.
-    String dietTag = txtDietTag.getText().trim();
-    if (!dietTag.matches("[a-zA-Z\\s]+")) {
-        Alert alert = new Alert(Alert.AlertType.ERROR, "Please enter a valid diet tag (letters and spaces only).");
-        alert.showAndWait();
-        return;
-    }
-    
+     String dietTag = txtDietTag.getText().trim();
+        List<String> validDietTags = Arrays.asList("Non-Vegetarian", "Pescatarian", "Vegetarian", "Vegan");
+        if (!validDietTags.contains(dietTag)) {
+            Alert alert = new Alert(Alert.AlertType.ERROR, "Please enter a valid diet tag (Non-Vegetarian, Pescatarian, Vegetarian, or Vegan).");
+            alert.showAndWait();
+            return;
+        }
     // After validations, update the ingredient.
     ingredient.setName(ingredientName);
     ingredient.setCategory(category);
