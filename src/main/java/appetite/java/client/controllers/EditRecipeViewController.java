@@ -81,7 +81,7 @@ private void handleSave() {
     } else {
         // If the input does not start with '{' or '[', assume it's plain text and wrap it.
         if (!dataInput.startsWith("{") && !dataInput.startsWith("[")) {
-            dataInput = "{\"steps\":" + gson.toJson(dataInput) + "}";
+            dataInput = "{\"description\":" + gson.toJson(dataInput) + "}";
         }
     }
     recipe.setData(dataInput);
